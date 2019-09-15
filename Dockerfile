@@ -3,10 +3,13 @@ FROM ubuntu:latest
 RUN apt-get update \
     #
     && apt-get -y install \
-    fish \
+    build-essential \
+    curl \
+    file \
     git \
-    npm \
+    # fish \
+    # npm \
     # 不要なキャッシュを削除
     && apt-get clean \
     # default を fishに
-    && chsh -s $(which fish)
+    # && chsh -s $(which fish)
