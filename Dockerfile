@@ -10,6 +10,6 @@ RUN apt-get update \
     # fish \
     # npm \
     # 不要なキャッシュを削除
-    && apt-get clean \
-    # default を fishに
-    # && chsh -s $(which fish)
+    && apt-get clean
+# default を fishに
+# && chsh -s $(which fish)
