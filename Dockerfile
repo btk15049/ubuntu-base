@@ -1,9 +1,14 @@
 FROM ubuntu:latest
 
 RUN apt-get update \
-    # 先に日本語を入れておく
-    && apt-get -y install language-pack-ja \
-    && apt-get -y install \
+    # 先に言語の設定
+    && apt-get -y install locales \
+    && locale-gen en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8
+RUN localedef -f UTF-8 -i en_US en_US.UTF-8
+
+RUN apt-get -y install \
     build-essential \
     curl \
     file \
