@@ -22,7 +22,7 @@ USER user
 # install brew
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 ENV PATH $PATH:/home/user/.linuxbrew/bin
-RUN which brew
+RUN brew install gcc
 
 # default を fishに
 # && chsh -s $(which fish)
