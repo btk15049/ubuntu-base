@@ -8,16 +8,13 @@ RUN apt-get update \
     curl \
     file \
     git \
-    # fish \
-    # npm \
     # 不要なキャッシュを削除
     && apt-get clean
 
 # brewを使いたいのでuserという名のuserを作成
-    groupadd -g 61000 docker \
+RUN groupadd -g 61000 docker \
     && useradd -g 61000 -l -m -s /bin/false -u 61000 user \
     && gpasswd -a user sudo
-
 USER user
 
 # install brew
