@@ -22,7 +22,7 @@ USER user
 # install brew
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 ENV PATH $PATH:/home/user/.linuxbrew/bin
-RUN brew install gcc
+RUN localedef -f UTF-8 -i ja_JP ja_JP && localectl list-locales | grep -i ja
 
 # default を fishに
 # && chsh -s $(which fish)
