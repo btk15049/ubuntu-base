@@ -8,6 +8,7 @@ ENV LC_ALL=en_US.UTF-8
 ENV LANG=en_US.UTF-8
 RUN localedef -f UTF-8 -i en_US en_US.UTF-8
 
+# brewに必要なパッケージを入れる
 RUN apt-get -y install \
     build-essential \
     curl \
