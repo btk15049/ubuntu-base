@@ -30,6 +30,4 @@ ENV PATH $PATH:/home/user/.linuxbrew/bin
 # default を fishに
 RUN brew install fish
 SHELL ["fish", "-c"]
-RUN echo $0
-
-# && chsh -s $(which fish)
+RUN set
