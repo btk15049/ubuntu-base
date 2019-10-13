@@ -27,6 +27,12 @@ USER user
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 ENV PATH $PATH:/home/user/.linuxbrew/bin
 
+RUN brew install gcc@5 boost cmake
+
+# install online judge-tools and more python tools
+RUN brew install python \
+    && pip3 install online-judge-tools yq
+
 # default を fishに
 WORKDIR /home/user
 RUN brew install fish
