@@ -27,7 +27,9 @@ USER user
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 ENV PATH $PATH:/home/user/.linuxbrew/bin
 
-RUN brew install gcc@5 boost cmake
+# gcc系と必須コマンド系
+RUN brew install boost cmake colordiff gcc@5 sl tree wget \
+    && alias diff='colordiff'
 
 # install online judge-tools and more python tools
 RUN brew install python \
