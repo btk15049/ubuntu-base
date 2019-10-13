@@ -28,6 +28,6 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/mast
 ENV PATH $PATH:/home/user/.linuxbrew/bin
 
 # default を fishに
+WORKDIR /home/user
 RUN brew install fish
-SHELL ["fish", "-c"]
-RUN set
+CMD ["fish"]
