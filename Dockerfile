@@ -32,7 +32,7 @@ RUN brew install \
     boost \
     cmake \
     colordiff \
-    gcc@5 \
+    gcc \
     sl \
     tree \
     wget \
