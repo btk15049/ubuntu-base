@@ -30,7 +30,6 @@ ENV PATH $PATH:/home/user/.linuxbrew/bin
 # gcc系と必須コマンド系
 RUN brew install \
     boost \
-    clang-format \
     cmake \
     colordiff \
     gcc@5 \
@@ -45,6 +44,9 @@ RUN brew install python \
     online-judge-tools \
     selenium \
     yq
+
+RUN brew install clang-format
+RUN brew cleanup
 
 # default を fishに
 WORKDIR /home/user
