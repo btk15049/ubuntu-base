@@ -33,7 +33,10 @@ RUN brew install boost cmake colordiff gcc@5 sl tree wget \
 
 # install online judge-tools and more python tools
 RUN brew install python \
-    && pip3 install online-judge-tools yq
+    && pip3 install \
+    online-judge-tools \
+    selenium \
+    yq
 
 # default を fishに
 WORKDIR /home/user
