@@ -21,7 +21,7 @@ jobs:
       #    docker tag ${CONTAINER_REGISTRY_PATH}/${IMAGE_NAME}:latest cache
       - name: Build docker image
         run: |
-      #    docker build --cache-from cache -t current .
+          #docker build --cache-from cache -t current .
           docker build -t current .
       - name: Push docker image
         env:
