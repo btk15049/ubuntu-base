@@ -28,7 +28,15 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/mast
 ENV PATH $PATH:/home/user/.linuxbrew/bin
 
 # gcc系と必須コマンド系
-RUN brew install boost cmake colordiff gcc@5 sl tree wget \
+RUN brew install \
+    boost \
+    clang-format \
+    cmake \
+    colordiff \
+    gcc@5 \
+    sl \
+    tree \
+    wget \
     && alias diff='colordiff'
 
 # install online judge-tools and more python tools
