@@ -28,7 +28,7 @@ jobs:
           CONTAINER_REGISTRY_PATH: docker.pkg.github.com/${{ github.repository }}
           IMAGE_NAME: ubuntu
         run: |
-          TAG=`date "+%Y%m%d"`
+          TAG=`date "+%Y%m%d%H%M"`
           docker tag current ${CONTAINER_REGISTRY_PATH}/${IMAGE_NAME}:${TAG}
           docker push ${CONTAINER_REGISTRY_PATH}/${IMAGE_NAME}:${TAG}
           docker tag current ${CONTAINER_REGISTRY_PATH}/${IMAGE_NAME}:latest

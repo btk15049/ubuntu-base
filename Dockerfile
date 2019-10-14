@@ -25,7 +25,7 @@ USER user
 
 # install brew
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-ENV PATH $PATH:/home/user/.linuxbrew/bin
+ENV PATH /home/user/.linuxbrew/bin:$PATH
 
 # gcc系と必須コマンド系
 RUN brew install \
