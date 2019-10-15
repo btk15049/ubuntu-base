@@ -3,7 +3,8 @@ FROM ubuntu:latest
 RUN apt-get update \
     # 先に言語の設定
     && apt-get -y install locales \
-    && locale-gen en_US.UTF-8
+    && locale-gen en_US.UTF-8 \
+    && apt-get clean
 ENV LC_ALL=en_US.UTF-8
 ENV LANG=en_US.UTF-8
 RUN localedef -f UTF-8 -i en_US en_US.UTF-8
@@ -31,25 +32,24 @@ ENV PATH /home/user/.linuxbrew/bin:$PATH
 # gcc系と必須コマンド系
 RUN brew install \
     boost \
+    clang-format \
     cmake \
     colordiff \
     gcc \
     sl \
+    python \
     tree \
     wget \
+    && brew cleanup \
     && alias diff='colordiff'
 
 # install online judge-tools and more python tools
-RUN brew install python \
-    && pip3 install \
+RUN pip3 install \
     online-judge-tools \
     selenium \
     yq
 
-RUN brew install clang-format
-RUN brew cleanup
-
 # default を fishに
 WORKDIR /home/user
-RUN brew install fish
+RUN brew install fish && brew cleanup
 CMD ["fish"]
