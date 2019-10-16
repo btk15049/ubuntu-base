@@ -49,6 +49,9 @@ RUN pip3 install \
     selenium \
     yq
 
+WORKDIR /usr/local/bin
+RUN ln -s /home/user/.linuxbrew/bin/clang-format
+
 # default を fishに
 WORKDIR /home/user
 RUN brew install fish && brew cleanup
