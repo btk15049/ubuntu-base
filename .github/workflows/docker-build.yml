@@ -22,7 +22,6 @@ jobs:
       - name: Build docker image
         run: |
           docker build --cache-from cache -t current .
-          docker build -t current .
       - name: Push docker image
         env:
           CONTAINER_REGISTRY_PATH: docker.pkg.github.com/${{ github.repository }}
