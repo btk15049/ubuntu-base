@@ -31,7 +31,8 @@ ENV PATH /home/user/.linuxbrew/bin:$PATH
 
 # gcc系と必須コマンド系
 RUN brew install \
-    boost \
+    boost
+RUN brew install \
     clang-format \
     cmake \
     colordiff \
