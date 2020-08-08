@@ -30,8 +30,8 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/mast
 ENV PATH /home/user/.linuxbrew/bin:$PATH
 
 # gcc系と必須コマンド系
-RUN brew install \
-    boost
+RUN brew install gcc
+RUN brew install boost
 
 #RUN brew install \    
 #    clang-format
@@ -41,9 +41,6 @@ RUN brew install \
     
 RUN brew install \
     colordiff
-    
-RUN brew install \
-    gcc
     
 RUN brew install \
     sl
