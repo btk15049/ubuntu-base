@@ -33,8 +33,8 @@ ENV PATH /home/user/.linuxbrew/bin:$PATH
 RUN brew install \
     boost
 
-RUN brew install \    
-    clang-format
+#RUN brew install \    
+#    clang-format
 
 RUN brew install \
     cmake
