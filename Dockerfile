@@ -31,16 +31,33 @@ ENV PATH /home/user/.linuxbrew/bin:$PATH
 
 # gcc系と必須コマンド系
 RUN brew install \
-    boost \
-    # clang-format \
-    cmake \
-    colordiff \
-    gcc \
-    sl \
-    python \
-    tree \
-    wget \
-    && brew cleanup \
+    boost
+
+RUN brew install \    
+    clang-format
+
+RUN brew install \
+    cmake
+    
+RUN brew install \
+    colordiff
+    
+RUN brew install
+    gcc
+    
+RUN brew install \
+    sl
+    
+RUN brew install \
+    python
+    
+RUN brew install \
+    tree
+    
+RUN brew install \
+    wget
+    
+RUN brew cleanup \
     && alias diff='colordiff'
 
 # install online judge-tools and more python tools
