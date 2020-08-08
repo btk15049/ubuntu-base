@@ -42,7 +42,7 @@ RUN brew install \
 RUN brew install \
     colordiff
     
-RUN brew install
+RUN brew install \
     gcc
     
 RUN brew install \
