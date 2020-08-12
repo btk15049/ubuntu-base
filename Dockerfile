@@ -29,7 +29,7 @@ USER user
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 ENV PATH /home/user/.linuxbrew/bin:$PATH
 
-RUN gcc -dumpversion
+RUN ln -s `which gcc` `brew --prefix`/bin/gcc-9
 
 # gcc系と必須コマンド系
 RUN brew install gcc
