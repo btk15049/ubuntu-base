@@ -29,6 +29,8 @@ USER user
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 ENV PATH /home/user/.linuxbrew/bin:$PATH
 
+RUN gcc -dumpversion
+
 # gcc系と必須コマンド系
 RUN brew install gcc
 RUN brew install boost
