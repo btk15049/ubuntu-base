@@ -32,31 +32,17 @@ ENV PATH /home/user/.linuxbrew/bin:$PATH
 RUN ln -s `which gcc` `brew --prefix`/bin/gcc-9
 
 # gcc系と必須コマンド系
-RUN brew install gcc
-RUN brew install boost
-
-#RUN brew install \    
-#    clang-format
-
 RUN brew install \
-    cmake
-    
-RUN brew install \
-    colordiff
-    
-RUN brew install \
-    sl
-    
-RUN brew install \
-    python
-    
-RUN brew install \
-    tree
-    
-RUN brew install \
-    wget
-    
-RUN brew cleanup \
+    gcc \
+    boost \
+    clang-format \ 
+    cmake \
+    colordiff \    
+    sl \
+    python \
+    tree \
+    wget \    
+    && brew cleanup \
     && alias diff='colordiff'
 
 # install online judge-tools and more python tools
